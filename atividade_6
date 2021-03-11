@@ -1,0 +1,646 @@
+1-a) ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		
+		inteiro n_minimo = 0
+		inteiro n_max = 20	
+		enquanto(n_minimo < n_max)
+		{
+			n_minimo++
+			escreva("\n"+n_minimo)
+	
+		}
+	}
+}
+
+1-b) ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		para(inteiro i = 1; i < 20; i++)
+		{
+			escreva(i + "\n")
+		}
+	}
+}
+
+2- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		
+		inteiro n_minimo = 21
+		inteiro n_max = 1	
+		enquanto(n_minimo > n_max)
+		{
+			n_minimo--
+			escreva("\n")
+			escreva(n_minimo)
+		}
+	}
+}
+
+3- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		
+		inteiro n_minimo = 21
+		inteiro n_max = 1	
+		enquanto(n_minimo > n_max)
+		{
+			n_minimo--
+			escreva(" " + n_minimo)
+		}
+	}
+}
+
+4- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro n_minimo = 1
+		
+		enquanto(n_minimo < 50)
+		{
+		n_minimo += 2
+		escreva(" " + n_minimo)
+		}
+	}
+}
+
+5- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro n = 0
+		logico n2 = falso
+	
+		leia(n)
+		
+		para(inteiro i = 1; i <= n; i++)
+		{
+			escreva(i)
+			se(i == n)
+			{
+				escreva("\n" + "\n" + "\n")
+				n2 = verdadeiro
+			}
+			
+		}
+
+		se(n2)
+		{
+			para(inteiro i = n; i >= 1; i--)
+			{
+				escreva(i)
+			}
+		}
+		
+	}
+}
+
+
+6- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro num_1 = 0
+		inteiro num_2 = 0
+
+		leia(num_1)
+		leia(num_2)
+
+		para(inteiro i = num_1; i <= num_2; i++)
+		{
+			escreva(" " + i)
+		}
+	}
+}
+
+7- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro nota = 0
+		leia(nota)
+
+		se(nota <= 10 e nota >= 0)
+		{
+			escreva("\n" + nota)
+		}
+
+		enquanto(nota > 10 ou nota < 0)
+		{
+		escreva("Valor invalido\n")
+		leia(nota)
+		}
+		
+	}
+}
+
+8- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia senha = "coxinha"
+
+		leia(senha)
+
+		enquanto(senha != "coxinha")
+		{
+			escreva("Senha invalida \n")
+			leia(senha)
+		}
+		
+		se(senha == "coxinha")
+		{
+			escreva("Senha correta")
+		}
+	}
+}
+
+9- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	inclua biblioteca Texto --> t
+	
+	funcao inicio()
+	{
+
+		inteiro n_caracteres
+		
+		//nome
+		cadeia nome
+
+		escreva("Qual o seu nome? : ")
+		leia(nome)
+
+		n_caracteres = t.numero_caracteres(nome)
+		
+		enquanto(n_caracteres <= 3)
+		{
+			escreva("\nDigite um nome com mais de 3 caracteres \n")
+			leia(nome)
+			n_caracteres = t.numero_caracteres(nome)
+		}
+		
+		se(n_caracteres > 3)
+		{
+			escreva("\n")
+		}
+
+		//idade
+		
+		inteiro idade
+
+		escreva("Qual a sua idade? : ")
+		leia(idade)
+
+		enquanto(idade < 0 ou idade > 150)
+		{
+			escreva("\nDigite uma idade entre 0 e 150 \n")
+			leia(idade)
+		}
+		
+		se(idade >= 0 e idade <= 150)
+		{
+			escreva("\n")
+		}
+
+		//salario
+
+		inteiro salario
+
+		escreva("Qual o seu salário? : ")
+		leia(salario)
+
+		enquanto(salario < 0)
+		{
+			escreva("\nDigite um salário maior do que 0 \n")
+			leia(salario)
+		}
+
+		se(salario > 0)
+		{
+			escreva("\nParabens! Você foi cadastrado")	
+		}
+	}
+}
+
+10- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+
+		inteiro anos = 0
+		
+		inteiro pais_a = 80000
+		inteiro pais_b = 200000
+
+		real taxa_a = 3.0
+		real taxa_b = 1.5
+
+		real porcentagem_a, porcentagem_b
+		
+		enquanto(pais_a < pais_b)
+		{
+			porcentagem_a = (taxa_a / 100)
+			porcentagem_a = porcentagem_a * pais_a
+			pais_a += porcentagem_a
+
+			porcentagem_b = (taxa_b / 100)
+			porcentagem_b = porcentagem_b * pais_b
+			pais_b += porcentagem_b
+			anos += 1
+		}
+
+		se(pais_a > pais_b)
+		{
+			escreva("Demorou " + anos + " anos para o pais A ultrapassar o pais B \n")
+
+			escreva("Pais A: " + pais_a + "\n")
+			escreva("Pais B: " + pais_b + "\n")
+		}
+		
+	}
+}
+
+11- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia repetir = "Y"
+		
+		enquanto(repetir == "Y")
+		{
+			inteiro anos = 0
+		
+			inteiro pais_a, pais_b
+			escreva("\nDigite o pais A: ")
+			leia(pais_a)
+			escreva("\nDigite o pais B: ")
+			leia(pais_b)
+		
+			real taxa_a, taxa_b
+			escreva("\nDigite a taxa de crescimento A: ")
+			leia(taxa_a)
+			escreva("\nDigite a taxa de crescimento B: ")
+			leia(taxa_b)
+
+			real porcentagem_a, porcentagem_b
+		
+			enquanto(pais_a < pais_b)
+			{
+				porcentagem_a = (taxa_a / 100)
+				porcentagem_a = porcentagem_a * pais_a
+				pais_a += porcentagem_a
+
+				porcentagem_b = (taxa_b / 100)
+				porcentagem_b = porcentagem_b * pais_b
+				pais_b += porcentagem_b
+				anos += 1
+			}
+
+			se(pais_a > pais_b)
+			{
+				escreva("Demorou " + anos + " anos para o pais A ultrapassar o pais B \n")
+
+				escreva("Pais A: " + pais_a + "\n")
+				escreva("Pais B: " + pais_b + "\n")
+				escreva("Repetir? Y/N \n")
+				leia(repetir)
+			}
+		
+		}	
+	}
+}
+
+
+12- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	inclua biblioteca Matematica --> m
+	
+	funcao inicio()
+	{
+
+	real vertice[5]
+	real maior
+	
+	leia(vertice[0])
+	leia(vertice[1])
+	leia(vertice[2])
+	leia(vertice[3])
+	leia(vertice[4])
+
+	maior = m.maior_numero(vertice[0], m.maior_numero(vertice[1] , m.maior_numero(vertice[2], m.maior_numero(vertice[3], vertice[4]))))
+	escreva(maior)
+	
+	}
+}
+
+13- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+
+		real vertice[5]
+		real soma
+		real media
+	
+		leia(vertice[0])
+		leia(vertice[1])
+		leia(vertice[2])
+		leia(vertice[3])
+		leia(vertice[4])
+
+		soma = vertice[0] + vertice[1] + vertice[2] + vertice[3] + vertice[4]
+		media = soma / 5
+
+		escreva(media)
+		
+	}
+}
+
+
+14- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+
+		inteiro tabuada
+
+		leia(tabuada)
+
+		escreva("tabuada do 10x" + tabuada + " = 0\n")
+
+		para(inteiro i = 1; i<=10; i++)
+		{
+			escreva(i + "x" + tabuada + " = " + i * tabuada + "\n")
+		}
+	
+	}
+}
+
+15- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro base, expoente, resultado = 1
+
+		escreva("informe a base: ")
+		leia(base)
+
+		escreva("informe a expoente: ")
+		leia(expoente)
+
+		para(inteiro i=1; i <= expoente; i++)
+		{
+			resultado *= base
+		}
+
+		escreva("resultado: " + resultado)
+		
+	}
+}
+
+16- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro vertice[10]
+		inteiro par = 0
+		inteiro impar = 0
+
+		leia(vertice[0])
+		leia(vertice[1])
+		leia(vertice[2])
+		leia(vertice[3])
+		leia(vertice[4])
+		leia(vertice[5])
+		leia(vertice[6])
+		leia(vertice[7])
+		leia(vertice[8])
+		leia(vertice[9])
+
+		para(inteiro i = 0; i < 10; i++)
+		{
+			se(vertice[i]%2 == 0)
+			{
+				par ++
+			}senao impar++
+		}
+
+		escreva("o numero de pares é: " + par + "\n")
+		escreva("o numero de impares é: " + impar)
+	}
+}
+
+17- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro contador = 1
+		inteiro n
+
+		escreva("quantos termos vc deseja?")
+		leia(n)
+	
+		inteiro primeiroTermo = 0
+		inteiro segundoTermo = 1
+		inteiro proximoTermo
+
+		escreva(primeiroTermo, ", ")
+		escreva(segundoTermo, ", ")
+
+		enquanto(contador <= n-2)
+		{
+			
+			proximoTermo = primeiroTermo + segundoTermo
+			primeiroTermo = segundoTermo
+			segundoTermo = proximoTermo
+	
+			se(contador != n-2)
+			{
+				escreva(proximoTermo, ", ")
+			}
+			senao
+			{
+				escreva(proximoTermo, ". ")
+			}
+			
+			contador++
+		}		
+		
+	}
+}
+
+18- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro n, fatorial = 1
+
+		leia(n)
+		
+		para(inteiro i=n; i >= 1; i--)
+		{
+			fatorial = fatorial * i
+		}
+
+		escreva(fatorial)
+		
+	}
+}
+
+19- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{		
+
+	inclua biblioteca Matematica --> m
+	
+	funcao inicio()
+	{
+		
+		inteiro limite
+		real maior = 0.0, maior_n = 0.0
+		real menor = 0.0, menor_n = 0.0
+		inteiro soma = 0
+
+		escreva("Qual a quantidade maxima de numeros?: ")
+		leia(limite)
+		
+		real vetor[999]
+
+		para(inteiro i = 0; i< limite; i++)
+		{
+			escreva("Qual o valor do ", i + 1, " numero? ")
+			leia(vetor[i])
+			
+		}
+
+		maior_n = vetor[0]
+		menor_n = vetor[0]
+
+		para(inteiro n = 0; n < limite; n++)
+		{
+			maior = m.maior_numero(maior_n, vetor[n])
+			maior_n = maior
+			menor = m.menor_numero(menor_n, vetor[n])		
+			menor_n = menor
+			soma += vetor[n]	
+		}
+
+		escreva("O maior numero foi: " + maior + "\n")
+		escreva("O menor numero foi: " + menor + "\n")
+		escreva("A soma dos numeros foi: " + soma + "\n")
+		
+	}
+}
+
+20- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+programa
+{		
+
+	inclua biblioteca Matematica --> m
+	
+	funcao inicio()
+	{
+		
+		inteiro limite
+		real maior = 0.0, maior_n = 0.0
+		real menor = 0.0, menor_n = 0.0
+		inteiro soma = 0
+
+		escreva("Qual a quantidade maxima de numeros?: ")
+		leia(limite)
+		
+		real vetor[999]
+
+		para(inteiro i = 0; i< limite; i++)
+		{
+			escreva("Qual o valor do ", i + 1, " numero? ")
+			leia(vetor[i])
+			enquanto(vetor[i] < 0 ou vetor[i] > 1000)
+			{
+				escreva("O numero tem que ser entre 0 e 1000 \n")
+				leia(vetor[i])
+			}
+		}
+
+		maior_n = vetor[0]
+		menor_n = vetor[0]
+
+		para(inteiro n = 0; n < limite; n++)
+		{
+			maior = m.maior_numero(maior_n, vetor[n])
+			maior_n = maior
+			menor = m.menor_numero(menor_n, vetor[n])		
+			menor_n = menor
+			soma += vetor[n]	
+		}
+
+		escreva("O maior numero foi: " + maior + "\n")
+		escreva("O menor numero foi: " + menor + "\n")
+		escreva("A soma dos numeros foi: " + soma + "\n")
+		
+	}
+}
