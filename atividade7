@@ -1,0 +1,534 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+1-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro vetor[5] = {1,2,3,4,5}
+	
+		para(inteiro i = 0; i < 5; i++)
+		{
+			escreva(vetor[i])	
+		}
+		
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+2-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		real vetor[10] = {1.10,1.11,1.12,1.13,1.14,1.15,1.16,1.17,1.18,1.19} 
+
+		para(inteiro i = 10; i != 0; i--)
+		{
+			escreva("\n" + vetor[i - 1])
+		}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+3-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro vetor[4] = {5,7,5,9}
+
+		 para(inteiro i = 0; i < 4; i++)
+		 {
+		 	escreva("\n" + vetor[i])
+		 	se(i == 3)
+		 	{
+		 		inteiro media = (vetor[0] + vetor[1] + vetor[2] + vetor[3]) / i
+		 		escreva("\n" + "-------------------" + "\n" + media)
+		 	}
+		 }
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+4-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	inclua 
+biblioteca Util
+	
+	funcao inicio()
+	{
+		inteiro vetor[50]
+		
+		para(inteiro i = 0; i < 50; i++)
+		{
+			vetor[i] = sorteia(0, 100)
+			escreva("\n" + vetor[i])
+		}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+5-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro vetor[10]
+
+		para(inteiro i = 0; i < 10; i++)
+		{
+			escreva("\n"+"Insira um numero: ")
+			leia(vetor[i])
+		}
+
+		escreva("-------------------")
+
+		para(inteiro i = 0; i < 10; i++)
+		{
+			se(vetor[i] % 2 == 0)
+			{
+			escreva("\n" + vetor[i] + " é par e está no vetor " + i)
+			}
+		}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+6-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	inclua biblioteca Util
+	
+	funcao inicio()
+	{
+		inteiro vetor[30]
+		inteiro chave
+		inteiro vezes = 0
+
+		para(inteiro i = 0; i < 30; i++)
+		{
+			vetor[i] = sorteia(1, 15)
+		}
+
+		escreva("Digite a chave de 1 a 15: ")
+		leia(chave)
+
+		escreva("\n" + "As posições que sua chave se encontra são:")
+		
+		para(inteiro i = 0; i < 30; i++)
+		{
+			se (vetor[i] == chave)
+			{
+				escreva("\n" + i)
+				vezes++
+			}
+
+		}
+
+		escreva("\nO numero de vezes que sua chave apareceu foi: \n" + vezes)
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+7-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+inclua biblioteca Util --> u
+	
+	funcao inicio()
+	{
+		inteiro listadeImpares[5]
+		inteiro listadePares[5]
+		inteiro listaIntercalados[10]
+		inteiro numeroElementos
+		logico parOuImpar = verdadeiro
+		inteiro parRodada = 0
+		inteiro imparRodada = 0
+
+		//pedindo numeros impares
+		para(inteiro i = 0; i < 5; i++)
+		{
+			escreva("Escreva o " + (i + 1) + " numero impar: ")
+			leia(listadeImpares[i])
+			
+			enquanto(listadeImpares[i] % 2 == 0)
+			{
+				escreva("Numero invalido tente novamente: ")
+				leia(listadeImpares[i])
+			}
+			
+		}
+
+		//pedindo numeros pares
+		para(inteiro i = 0; i < 5; i++)
+		{
+			escreva("Escreva o " + (i + 1) + " numero par: ")
+			leia(listadePares[i])
+			
+			enquanto(listadePares[i] % 2 != 0)
+			{
+				escreva("Numero invalido tente novamente: ")
+				leia(listadePares[i])
+			}
+			
+		}
+
+		escreva("\n"+ "-------------" + "\n")
+
+		//mostrando valores intercalados
+		para(inteiro i = 0; i < 10; i++)
+		{
+			
+			se(parOuImpar == falso)
+			{
+				listaIntercalados[i] = listadePares[parRodada]
+				parRodada++
+				parOuImpar = verdadeiro
+				escreva("\n" + listaIntercalados[i] + " do vetor dos pares")
+			}
+
+			senao
+			{
+				listaIntercalados[i] = listadeImpares[imparRodada]
+				imparRodada++
+				parOuImpar = falso
+				escreva("\n" + listaIntercalados[i] + " do vetor dos impares")
+			}
+
+		}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+8-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro linha = 0
+		inteiro coluna = 0
+		inteiro numeros[3][3] = {
+			
+			{1,3,5},
+			{7,9,11},
+			{13,15,17}
+
+		}
+			
+		enquanto(coluna != 2)
+		{	
+			enquanto (linha < 3)
+			{
+				escreva(" " + numeros[coluna][linha])
+				linha++	
+				se(linha == 2 e coluna != 2)
+				{
+					escreva(" " + numeros[coluna][linha])
+					linha = 0
+					coluna++
+					escreva("\n")
+				}
+			}	
+
+		}		
+		
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+9-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro linha = 0
+		inteiro coluna = 0
+		inteiro resultado = 0
+		inteiro numeros[3][3] = {
+			
+			{1,3,5},
+			{7,9,11},
+			{13,15,17}
+
+		}
+			
+		enquanto(coluna != 2)
+		{	
+			enquanto (linha < 3)
+			{
+				resultado += numeros[coluna][linha]
+				linha++	
+				se(linha == 2 e coluna != 2)
+				{
+					resultado += numeros[coluna][linha]
+					linha = 0
+					coluna++
+				}
+			}	
+
+		}
+
+		escreva("O resultado da soma da matriz foi: " + resultado)
+		
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+10-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro coluna = 0
+		inteiro linha = 0
+		logico calculo_pares = falso
+		inteiro numeros[5][3]
+
+		enquanto(coluna != 4)
+		{	
+			enquanto (linha < 3)
+			{
+				escreva("Digite um numero para a linha " + (linha + 1)+ " e coluna " + (coluna + 1) + " : ")
+				leia(numeros[coluna][linha])
+				linha++	
+				se(linha == 2 e coluna != 4)
+				{
+					escreva("Digite um numero para a linha " + (linha + 1)+ " e coluna " + (coluna + 1) + " : ")
+					leia(numeros[coluna][linha])
+					linha = 0
+					coluna++
+				}
+			}
+		}
+		escreva("\n--------------------------\n")
+		linha = 0
+		coluna = 0
+		enquanto(coluna != 4)
+		{	
+			enquanto (linha < 3)
+			{
+				se(numeros[coluna][linha] % 2 == 0)
+				{
+					escreva("\n" + numeros[coluna][linha] + " é par e está na linha " + (linha + 1) + " e na coluna " + (coluna + 1))
+				}
+				linha++
+				se(linha == 2 e coluna != 4)
+				{
+					se(numeros[coluna][linha] % 2 == 0)
+					{
+						escreva("\n" + numeros[coluna][linha] + " é par e está na linha " + (linha + 1) + " e na coluna " + (coluna + 1))
+					}
+					linha = 0
+					coluna++
+				}
+								
+			}
+	}
+}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+11-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro linha = 0
+		inteiro coluna = 0
+		logico wally_esta = falso
+		cadeia nomes[3][3] = {
+			
+			{"Walso","Vila","Volley"},
+			{"Wilson","Valdo","Wally"},
+			{"Wallace","Willy","Vasco"}
+
+		}
+			
+		enquanto(coluna != 2)
+		{	
+			enquanto (linha < 3)
+			{
+				se(wally_esta == falso e nomes[coluna][linha] == "Wally")
+				{
+					wally_esta = verdadeiro
+					escreva("Wally está na matriz na linha " + (linha + 1) + " na coluna " + (coluna + 1))
+				}
+				linha++	
+				se(linha == 2 e coluna != 2)
+				{
+					se(wally_esta == falso e nomes[coluna][linha] == "Wally")
+					{
+						wally_esta = verdadeiro
+						escreva("Wally está na matriz na linha " + (linha + 1) + " na coluna " + (coluna + 1))
+					}
+					linha = 0
+					coluna++
+				}
+			}	
+
+		}
+
+		se(wally_esta == falso)
+		{
+			escreva("Wally não está na matriz")
+		}
+		
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+12-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro dia_inserido
+		inteiro mes_inserido
+		inteiro ult_digito_inserido
+		cadeia dia_aniversario[31] = {"O gato ","O guardião ","O babuino ","O pterodátilo ","O idiota ","O piloto ","O papagaio ","O vampiro ","O pedreiro ","O vaqueiro ","O espião ","O guerreiro ","A panqueca ","O humanoide ","O protetor ","O alce ","O robô ","O ganso ","O caixão ","O inseto ","O frango ","O tubarão ","O profeta ","O camelo ","O traficante ","O meteorito ","O esquisito ","O samurai ","O bolinho ","O detetive ","O astronauta "}
+		cadeia mes_aniversario[12] = {"Famoso ","Poderoso ","Aterrorizante ","Travesso ","Metafísico ","Roqueiro ","Extravagante ","Aventureiro ","Nuclear ","Demoníaco ","Fantástico ","Sobrenatural "}
+		cadeia ult_digito_ano[10] = {"Das salsichas","Da escuridão","Do futuro","Da segurança nacional", "Contra ataca", "Do espaço", "Não conhece piedade", "Do subsolo", "Do abismo", "De marte"}
+
+		escreva("Qual o seu dia de aniversario? : ")
+		leia(dia_inserido)
+
+		escreva("Qual o seu mês de nascimento? : ")
+		leia(mes_inserido)
+		
+		escreva("Qual o ultimo digito do ano do seu nascimento? : ")
+		leia(ult_digito_inserido)
+
+		escreva("O nome do seu filme seria: " + dia_aniversario[dia_inserido - 1] + mes_aniversario[mes_inserido - 1] + ult_digito_ano[ult_digito_inserido - 1])
+		
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+13-
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+
+	funcao inicio()
+	{
+		cadeia convidados[100]
+		inteiro opcao = 0
+		inteiro pessoas = 0
+		cadeia remover
+		logico removido = falso
+		cadeia espera
+
+		enquanto(opcao >= 0 ou opcao <= 4)
+		{
+
+			escreva("\n====================MENU=====================\n")
+			escreva("[ 1 ] Cadastrar Pessoa\n")
+			escreva("[ 2 ] Listar Pessoas\n")
+			escreva("[ 3 ] Remover Pessoa\n")
+			escreva("[ 4 ] Sair\n")
+			escreva("=========================\n")
+			escreva("Opção: ")
+			leia(opcao)
+			
+		enquanto (opcao == 1)
+		{
+			escreva("Digite o nome da pessoa que gostaria de adicionar a lista: ")
+			leia(convidados[pessoas])
+			se(convidados[pessoas] == "4")
+			{
+				opcao = 0
+			}
+			se(opcao != 0)
+			{
+				pessoas++
+			}
+		}
+
+		se (opcao == 2)
+		{
+			para(inteiro i = 0; i < pessoas; i++)
+			{
+				escreva((i + 1) +" "+ convidados[i] + "\n")
+			}
+
+			escreva("Digite qualquer tecla para voltar para o menu: ")
+			leia(espera)
+			
+			opcao = 0
+			
+		}
+
+		enquanto(opcao == 3)
+		{
+			removido = falso
+			remover = ""
+			escreva("\nQual a pessoa que você gostaria de remover da lista?: ")
+			leia(remover)
+			se(remover == "4")
+			{
+				opcao = 0
+			}
+			se(opcao == 3)
+			{
+				para(inteiro n = 0; n < pessoas; n++)
+				{
+					se(remover == convidados[n])
+					{
+						escreva(remover + " removido da lista!")
+						convidados[n] = ""
+						removido = verdadeiro
+					}
+
+				}
+				se (removido == falso)
+				{
+					escreva("Nome não encontrado")
+				}
+			}
+				
+			
+		}
+		
+		
+		}
+		
+		
+	}
+}
