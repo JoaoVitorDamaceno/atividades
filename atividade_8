@@ -1,0 +1,299 @@
+programa
+{
+	
+	inclua biblioteca Util --> u
+	
+	funcao inicio()
+	{
+		inteiro jogo_selecionado = 0
+		inteiro numero_apostas = 0
+		inteiro numero_dezenas = 0
+		inteiro mega_sena[15]
+		inteiro quina[15]
+		inteiro lotomania[50]
+		inteiro lotofacil[20]
+		inteiro numero_sorteado
+		real valor_dezenas_mega[15] = {0.0,0.0,0.0,0.0,0.0,4.50,31.50,126.00,378.00,945.00,2079.00,4158.00,7722.00,13513.50,22522.50}
+		real valor_dezenas_quina[15] = {0.0,0.0,0.0,0.0,2.00,12.00,42.00,112.00,252.00,504.00,924.00,1584.00,2574.00,4004.00,6006.00}
+		real valor_dezenas_lotofacil[20] = {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.50,40.00,340.00,2040.00,9690.00,38760.00}
+		real valor_dezenas_lotomania = 2.50
+		logico repetido = falso
+		cadeia sair
+		inteiro auxiliar
+
+		
+		enquanto(jogo_selecionado != 1 ou jogo_selecionado != 2 ou jogo_selecionado != 3 ou jogo_selecionado != 4)
+		{
+			escreva("\n" + "\\\\\\\\\\\\MENU\\\\\\\\\\\\\\")
+			escreva("\n[ 1 ] Mega-Sena")
+			escreva("\n[ 2 ] Quina")
+			escreva("\n[ 3 ] Lotomania")
+			escreva("\n[ 4 ] Lotofácil")
+			escreva("\nSelecione o jogo que quer apostar: ")
+			leia(jogo_selecionado)
+
+			enquanto(jogo_selecionado == 1)
+			{
+				numero_apostas = 0
+				numero_dezenas = 0
+				limpa()
+				escreva("\\\\\\Mega-Sena\\\\\\")
+				escreva("\nQuantas apostas deseja gerar?: ")
+				leia(numero_apostas)
+				enquanto(numero_apostas <= 0)
+				{
+					escreva("O numero de apostas tem que ser maior do que 0: ")
+					leia(numero_apostas)
+				}
+				escreva("Quantas dezenas deseja gerar?: ")
+				leia(numero_dezenas)
+				enquanto(numero_dezenas < 6 ou numero_dezenas > 15)
+				{
+					escreva("O numero de dezenas tem que ser no minimo 6 e no maximo 15: ")
+					leia(numero_dezenas)
+				}
+				para(inteiro i = 0; i < numero_apostas; i++)
+				{
+					escreva("\n")
+					para(inteiro j = 0; j < numero_dezenas; j++)
+					{
+						faca
+						{
+							repetido = falso
+							numero_sorteado = u.sorteia(1, 60)
+							para(inteiro k = 0; k < numero_dezenas; k++)
+							{
+								se(numero_sorteado == mega_sena[k])
+								{
+									repetido = verdadeiro
+									pare
+								}	
+							}
+							
+						}enquanto(repetido)
+
+						mega_sena[j] = numero_sorteado
+					}
+
+					para(inteiro j = 0; j < numero_dezenas; j++)
+					{
+					
+						para(inteiro l = j + 1; l < numero_dezenas; l++)
+						{
+							se(mega_sena[j] > mega_sena[l])
+							{
+								auxiliar = mega_sena[j]
+								mega_sena[j] = mega_sena[l]
+								mega_sena[l] = auxiliar
+							}
+						}
+
+						escreva(mega_sena[j] + " ")
+					}
+				}
+				real valor = valor_dezenas_mega[numero_dezenas - 1] * numero_apostas
+				escreva("\nTotal gasto: R$ " + valor)
+				escreva("\nPara voltar para o menu aperte qualquer tecla")
+				leia(sair)
+				jogo_selecionado = 0
+			}
+
+			enquanto(jogo_selecionado == 2)
+			{
+				numero_apostas = 0
+				numero_dezenas = 0
+				limpa()
+				escreva("\\\\\\Quina\\\\\\")
+				escreva("\nQuantas apostas deseja gerar?: ")
+				leia(numero_apostas)
+				enquanto(numero_apostas <= 0)
+				{
+					escreva("O numero de apostas tem que ser maior do que 0: ")
+					leia(numero_apostas)
+				}
+				escreva("Quantas dezenas deseja gerar?: ")
+				leia(numero_dezenas)
+				enquanto(numero_dezenas < 5 ou numero_dezenas > 15)
+				{
+					escreva("O numero de dezenas tem que ser no minimo 5 e no maximo 15: ")
+					leia(numero_dezenas)
+				}
+				para(inteiro i = 0; i < numero_apostas; i++)
+				{
+					escreva("\n")
+					para(inteiro j = 0; j < numero_dezenas; j++)
+					{
+						faca
+						{
+							repetido = falso
+							numero_sorteado = u.sorteia(1, 25)
+							para(inteiro k = 0; k < numero_dezenas; k++)
+							{
+								se(numero_sorteado == quina[k])
+								{
+									repetido = verdadeiro
+									pare
+								}	
+							}
+							
+						}enquanto(repetido)
+
+						quina[j] = numero_sorteado
+					}
+
+					para(inteiro j = 0; j < numero_dezenas; j++)
+					{
+					
+						para(inteiro l = j + 1; l < numero_dezenas; l++)
+						{
+							se(quina[j] > quina[l])
+							{
+								auxiliar = quina[j]
+								quina[j] = quina[l]
+								quina[l] = auxiliar
+							}
+						}
+
+						escreva(quina[j] + " ")
+					}
+				}
+				real valor = valor_dezenas_quina[numero_dezenas - 1] * numero_apostas
+				escreva("\nTotal gasto: R$ " + valor)
+				escreva("\nPara voltar para o menu aperte qualquer tecla")
+				leia(sair)
+				jogo_selecionado = 0
+			}
+
+			enquanto(jogo_selecionado == 3)
+			{
+				numero_apostas = 0
+				numero_dezenas = 0
+				limpa()
+				escreva("\\\\\\Lotomania\\\\\\")
+				escreva("\nQuantas apostas deseja gerar?: ")
+				leia(numero_apostas)
+				enquanto(numero_apostas <= 0)
+				{
+					escreva("O numero de apostas tem que ser maior do que 0: ")
+					leia(numero_apostas)
+				}
+				
+				para(inteiro i = 0; i < numero_apostas; i++)
+				{
+					escreva("\n")
+					para(inteiro j = 0; j < 50; j++)
+					{
+						faca
+						{
+							repetido = falso
+							numero_sorteado = u.sorteia(1, 100)
+							para(inteiro k = 0; k < 50; k++)
+							{
+								se(numero_sorteado == lotomania[k])
+								{
+									repetido = verdadeiro
+									pare
+								}	
+							}
+							
+						}enquanto(repetido)
+
+						lotomania[j] = numero_sorteado
+					}
+
+					para(inteiro j = 0; j < 50; j++)
+					{
+					
+						para(inteiro l = j + 1; l < 50; l++)
+						{
+							se(lotomania[j] > lotomania[l])
+							{
+								auxiliar = lotomania[j]
+								lotomania[j] = lotomania[l]
+								lotomania[l] = auxiliar
+							}
+						}
+						se(j % 10 == 0)
+						{
+							escreva("\n")
+						}
+						escreva(lotomania[j] + " ")
+						
+					}
+				}
+				real valor = valor_dezenas_lotomania * numero_apostas
+				escreva("\nTotal gasto: R$ " + valor)
+				escreva("\nPara voltar para o menu aperte qualquer tecla")
+				leia(sair)
+				jogo_selecionado = 0
+			}
+
+			enquanto(jogo_selecionado == 4)
+			{
+				numero_apostas = 0
+				numero_dezenas = 0
+				limpa()
+				escreva("\\\\\\Lotofácil\\\\\\")
+				escreva("\nQuantas apostas deseja gerar?: ")
+				leia(numero_apostas)
+				enquanto(numero_apostas <= 0)
+				{
+					escreva("O numero de apostas tem que ser maior do que 0: ")
+					leia(numero_apostas)
+				}
+				escreva("Quantas dezenas deseja gerar?: ")
+				leia(numero_dezenas)
+				enquanto(numero_dezenas < 15 ou numero_dezenas > 20)
+				{
+					escreva("O numero de dezenas tem que ser no minimo 15 e no maximo 20: ")
+					leia(numero_dezenas)
+				}
+				para(inteiro i = 0; i < numero_apostas; i++)
+				{
+					escreva("\n")
+					para(inteiro j = 0; j < numero_dezenas; j++)
+					{
+						faca
+						{
+							repetido = falso
+							numero_sorteado = u.sorteia(1, 25)
+							para(inteiro k = 0; k < numero_dezenas; k++)
+							{
+								se(numero_sorteado == lotofacil[k])
+								{
+									repetido = verdadeiro
+									pare
+								}	
+							}
+							
+						}enquanto(repetido)
+
+						lotofacil[j] = numero_sorteado
+					}
+
+					para(inteiro j = 0; j < numero_dezenas; j++)
+					{
+					
+						para(inteiro l = j + 1; l < numero_dezenas; l++)
+						{
+							se(lotofacil[j] > lotofacil[l])
+							{
+								auxiliar = lotofacil[j]
+								lotofacil[j] = lotofacil[l]
+								lotofacil[l] = auxiliar
+							}
+						}
+
+						escreva(lotofacil[j] + " ")
+					}
+				}
+				real valor = valor_dezenas_lotofacil[numero_dezenas - 1] * numero_apostas
+				escreva("\nTotal gasto: R$ " + valor)
+				escreva("\nPara voltar para o menu aperte qualquer tecla")
+				leia(sair)
+				jogo_selecionado = 0
+			}
+
+		}
+	}
+}
