@@ -1,0 +1,377 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+1
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro primeiro_numero
+		inteiro segundo_numero
+		inteiro maior_numero
+	
+		escreva("Digite o 1 numero: ")
+		leia(primeiro_numero)
+		escreva("Digite o 2 numero: ")
+		leia(segundo_numero)
+
+		se(primeiro_numero > segundo_numero)
+		{
+			escreva("O maior numero é " + primeiro_numero)
+		}senao{escreva("O maior numero é " + segundo_numero)}
+		
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+2
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro temperatura
+	
+		escreva("Informe a temperatura: ")
+		leia(temperatura)
+
+		se(temperatura >= 0)
+		{
+			escreva("A temperatura " + temperatura + " é positiva")
+		}senao{escreva("A temperatura " + temperatura + " é negativa")}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+3
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia sintomas_comuns[5] = {"Coriza", "Tosse", "Febre","Dor de Garganta","Dificuldade para Respirar"}
+		inteiro sintomas[5] = {2,2,2,2,2}
+		inteiro resposta
+		inteiro contagem_de_sintomas = 0
+
+		para(inteiro i = 0; i < 5; i++)
+		{
+			resposta = 0
+			escreva("Você está com sintomas de " + sintomas_comuns[i] + "?: ")
+			escreva("\n[1] Sim")
+			escreva("\n[2] Não\n")
+			leia(resposta)
+			enquanto(resposta != 1 e resposta != 2)
+			{
+				escreva("Você digitou um numero invalido tente novamente: ")
+				leia(resposta)
+			}
+			sintomas[i] = resposta 
+		}
+	
+		para(inteiro i = 0; i < 4; i++)
+		{
+			se(sintomas[i] == 1)
+			{
+				contagem_de_sintomas++
+				se(contagem_de_sintomas == 1)
+				{
+					escreva("Você esta com sintomas de:")
+				}
+				escreva(" " + sintomas_comuns[i] + ",")
+			}
+		}
+		se(sintomas[4] == 1)
+		{
+			escreva(" e sintomas graves de " + sintomas_comuns[4])
+			contagem_de_sintomas++
+		}
+		se(contagem_de_sintomas > 0)
+		{
+		escreva("\nVocê pode estar com covid")
+		}senao{escreva("\nVocê não esta com covid")}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+4
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro primeiro_lado
+		inteiro segundo_lado
+		inteiro terceiro_lado
+		inteiro tamanho[3]
+		inteiro auxiliar
+		inteiro lados_iguais = 0
+	
+		escreva("Qual o 1 lado?: ")
+		leia(tamanho[0])
+		enquanto(tamanho[0] <= 0)
+		{			
+			escreva("Digite um numero valido: ")
+			leia(tamanho[0])
+		}
+		escreva("Qual o 2 lado?: ")
+		leia(tamanho[1])
+		enquanto(tamanho[1] <= 0)
+		{			
+			escreva("Digite um numero valido: ")
+			leia(tamanho[1])
+		}
+		escreva("Qual o 3 lado?: ")
+		leia(tamanho[2])
+		enquanto(tamanho[2] <= 0)
+		{			
+			escreva("Digite um numero valido: ")
+			leia(tamanho[2])
+		}
+
+		para(inteiro i = 0; i < 3; i++)
+		{
+			para(inteiro j = i+1; j < 3; j++)
+			{
+				se(tamanho[i] > tamanho[j])
+				{
+					auxiliar = tamanho[i]
+					tamanho[i] = tamanho[j]
+					tamanho[j] = auxiliar
+				}
+			}
+		}
+
+		se(tamanho[0] + tamanho[1] == tamanho[2])
+		{
+			escreva("Não compoem um triângulo")
+		}senao{
+
+			se(tamanho[0] == tamanho[1] ou tamanho[0] == tamanho[2])
+			{
+				lados_iguais++
+			}
+
+			se(tamanho[1] == tamanho[0] ou tamanho[1] == tamanho[2])
+			{
+				lados_iguais++
+			}
+		
+			se(tamanho[2] == tamanho[0] ou tamanho[2] == tamanho[1])
+			{
+				lados_iguais++
+			}
+
+			se(lados_iguais == 0)
+			{
+				escreva("Triângulo escaleno")
+			}
+
+			se(lados_iguais == 2)
+			{
+				escreva("Triângulo isósceles")
+			}
+			
+			se(lados_iguais == 3)
+			{
+				escreva("Triângulo equilátero")
+			}
+		}
+	}
+}
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+5
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		cadeia letra
+		logico vogal = falso
+		cadeia letras_vogais[5] = {"a","e","i","o","u"}
+		
+		escreva("Digite uma letra: ")
+		leia(letra)
+		
+		para(inteiro i = 0; i < 5; i++)
+		{
+			se(letra == letras_vogais[i])
+			{
+				vogal = verdadeiro
+			}
+		}
+
+		se(vogal == verdadeiro)
+		{
+			escreva("Essa letra é vogal")
+		}senao{escreva("Essa letra é consoante")}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+6
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro numeros[3]
+		inteiro auxiliar
+
+		escreva("Digite o 1 numero: ")
+		leia(numeros[0])
+
+		escreva("Digite o 2 numero: ")
+		leia(numeros[1])
+		
+		escreva("Digite o 3 numero: ")
+		leia(numeros[2])
+
+		para(inteiro i = 0; i < 3; i++)
+		{
+			para(inteiro j = i+1; j < 3; j++)
+			{
+				se(numeros[i] < numeros[j])
+				{
+					auxiliar = numeros[i]
+					numeros[i] = numeros[j]
+					numeros[j] = auxiliar
+				}
+			}
+
+			escreva(numeros[i] + ", ")
+			
+		}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+7
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	inclua biblioteca Calendario --> c
+	
+	funcao inicio()
+	{
+		inteiro ano
+
+		escreva("Digite o ano: ")
+		leia(ano)
+		se(ano <= 0)
+		{
+			ano = c.ano_atual()
+		}
+
+		se(ano % 4 == 0)
+		{
+			escreva(ano + " é um ano bissexto")
+		}senao{escreva(ano + " não é um ano bissexto")}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+8
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro velocidade
+
+		escreva("Qual a velocidade do carro?: ")
+		leia(velocidade)
+
+		se(velocidade > 80)
+		{
+			escreva("Você foi multado!")
+			escreva("\nO valor da multa foi: R$ " + (velocidade - 80) * 7 + ",00")
+		}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+9
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro nota_1
+		inteiro nota_2
+		inteiro media
+	
+		escreva("Qual a 1 nota?: ")
+		leia(nota_1)
+
+		escreva("Qual a 2 nota?: ")
+		leia(nota_2)
+
+		media = (nota_1 + nota_2) / 2
+		
+		se(media >= 7 e media != 10)
+		{
+			escreva("Aprovado")
+		}
+
+		se(media < 7)
+		{
+			escreva("Reprovado")
+		}
+
+		se(media == 10)
+		{
+			escreva("Aprovado com Distinção")
+		}
+	}
+}
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+10
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro codigo[7] = {100,101,102,103,104,105,106}
+		real precos[7] = {5.00,2.60,3.80,9.00,11.00,3.00,1000.00}
+		cadeia nomes[7] = {"Cachorro Quente","Bauru","Bauru c/ovo","Hamburguer","Cheeseburguer","Refrigerante","Semente dos Deuses"}
+		inteiro codigo_lido
+		inteiro quantidade
+
+		escreva("Qual o codigo do item?: ")
+		leia(codigo_lido)
+		
+		escreva("Qual a quantidade do item?: ")
+		leia(quantidade)
+
+		para(inteiro i = 0; i < 7; i++)
+		{
+			se(codigo[i] == codigo_lido)
+			{
+				escreva("Você pagará pelo " + nomes[i] + " R$ " + precos[i] * quantidade + "0")
+			}
+		}
+	}
+}
